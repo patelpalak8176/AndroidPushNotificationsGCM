@@ -1,21 +1,30 @@
+//Rextester.Program.Main is the entry point for your code. Don't change it.
+//Compiler version 4.0.30319.17929 for Microsoft (R) .NET Framework 4.5
 
+using System;
+using System.Net;
+using System.Text;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 
-
-
-
-
-public class AndroidGCMPushNotification
+namespace Rextester
 {
-    public AndroidGCMPushNotification()
+    public class Program
+{
+    public Program()
     {
         //
         // TODO: Add constructor logic here
         //
     }
-    public string SendNotification(string deviceId, string message)
+    public static string Main(string[] data)
     {
-        string SERVER_API_KEY = "server api key";        
-        var SENDER_ID = "application number";
+        string deviceId = "480554650E15AC46"; 
+        string message = "This is test Push";
+        string SERVER_API_KEY = "AIzaSyDfs6hp96GKgbzL-j5WxmOn34xN3E2IQlg";        
+        var SENDER_ID = "595834475177";
         var value = message;
         WebRequest tRequest;
         tRequest = WebRequest.Create("https://android.googleapis.com/gcm/send");
@@ -48,4 +57,5 @@ public class AndroidGCMPushNotification
         tResponse.Close();
         return sResponseFromServer;
     }
+}
 }
